@@ -1,0 +1,54 @@
+set textwidth=80
+set tabstop=4
+set shiftwidth=4
+set autoindent
+set smartindent
+set expandtab
+set cindent
+set nocp
+set number
+set ruler
+
+filetype plugin on
+
+filetype plugin indent on
+let g:Tex_ViewRule_pdf = 'Preview'
+
+autocmd FileType c set omnifunc=ccomplete#Complete
+
+if has('syntax')
+	syntax on
+endif
+
+set tags+=~/.vim/systags
+
+set nocompatible
+set backspace=2
+
+set vb t_vb=""
+
+" Breaks on whitespace
+set linebreak
+
+set background=dark
+"let g:solarized_termcolors=256
+"colorscheme solarized
+
+" Haskell
+let g:ghc_version = "7.6.3"
+let g:haddock_browser = "/usr/bin/google-chrome"
+let g:ghc = "/usr/bin/ghc"
+let g:haddock_docdir = "/usr/share/doc/ghc-doc/html/"
+au BufEnter *.hs compiler ghc
+
+" ROS
+"set tags+=~/.vim/tags/ros
+
+" OmniCppComplete
+map <C-F12> :!ctags -R --c++-kinds=+pl --fields=+iaS --extra=+q --if0=yes .<CR>
+let OmniCpp_MayCompleteDot=1
+let OmniCpp_NamespaceSearch=1
+
+" clang complete
+let g:clang_library_path = "/usr/lib/x86_64-linux-gnu/libclang.so.1"
+
