@@ -1,0 +1,35 @@
+set textwidth=80
+set tabstop=4
+set shiftwidth=4
+set autoindent
+set smartindent
+set expandtab
+set cindent
+set nocp
+set number
+set ruler
+
+filetype plugin on
+
+filetype plugin indent on
+let g:Tex_ViewRule_pdf = 'Preview'
+
+if has('syntax')
+	syntax on
+endif
+
+set nocompatible
+set backspace=2
+
+set vb t_vb=""
+
+" Breaks on whitespace
+set linebreak
+
+" Disable text wrap/newline for some types
+autocmd BufRead *.md setlocal textwidth=0
+
+set t_Co=256
+let g:solarized_termcolors=256
+set background=dark
+colorscheme solarized
